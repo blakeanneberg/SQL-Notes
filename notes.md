@@ -27,16 +27,37 @@
 - Relational: Conceptual simplicity (structural independence), provides adhoc queries (SQL), set oriented access
 - NoSQL: Less semantics in data model, Based on schema less  key value data model, best suited for large sparse data stores. Not only SQL.
 - Relational vs Transactional models
-1. 
+    1. Relational: Allows for easy querying and data manipulation in a easy, logical, shows relational databases
+    2. Transactional: Operational database like in insuracce and healthcare. 
 - Define Entities
+    1. Person, place thing or event
+    2. Distinguishable, unique and distinct 
 - Define attributes
+    1. Characteristic of an entity
 - Define Relationships
+    1. Describes association among entities
 - One-One
+    1. EX: Manager to store 
 - One-Many
+    1. EX: Customer to invoices
 - Many-Many
+    1. EX: Student to classes 
 - Primary Keys in DB. 
-- ER diagrams documentation and illustrations. 
 
+- ER diagrams documentation and illustrations. 
+    1. Composed of entity types and specifices relationships that can exist between instances of thoes entity types. 
+    2. Shows relationships
+    3. Business process
+    4. Represented visually
+    5. Show links (primary keys)
+    6. Primary Keys
+        - A column(s) whose values uniquely identify every row in a table
+    7. Foreign Key
+        - One or more columns that can be used together to identify a single row in another table
+    8. Notation:
+        - Chen Notation: One to many (1:M), Many to many (M:N), and one to one (1:1)
+        - Crows foot notation: || is one and crows foot is many
+        - UML Class Diagram notation: 1.1 is one and 1.* is many
 
 
 
