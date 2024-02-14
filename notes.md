@@ -60,4 +60,33 @@
         - UML Class Diagram notation: 1.1 is one and 1.* is many
 
 
+# SQL Queries
+- SELECT statements
+    1. SELECT either all or particular columns from a table in a query. 
+    2. Needs to specify two pieces of info to use SELECT statemet: what you want, and where you want to select it from
+    EX input: 
+    ```
+    SELECT prod_name
+    FROM Products;
+    ```
+    EX output:
+    ```
+    prod_name
+    Shampoo
+    Toothpaste
+    Deodorant
+    Toothbrush
+    ```
+    EX Retrieving multiple columns:
+    ```
+    SELECT prod_name, prod_id, prod_price
+    FROM Products;
 
+    SELECT prod_name
+            ,prod_id
+            ,prod_price
+    FROM Products;
+    ```
+
+- Tell a DB which table data comes FROM
+- Limit amount of data which is returned in a query
