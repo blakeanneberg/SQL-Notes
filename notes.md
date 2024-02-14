@@ -136,7 +136,15 @@
     6. Addding data to the table 
     ```
     INSERT INTO Shoes
-    VALUES  ('14535974'
+            (Id, 
+            ,Brand
+            ,Type
+            ,Color
+            ,Price
+            ,Desc
+            )
+    VALUES  
+            ('14535974'
             ,'Gucci' 
             ,'Slippers'
             ,'Pink'
