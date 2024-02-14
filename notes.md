@@ -61,9 +61,8 @@
 
 
 # SQL Queries
-- SELECT statements
-    1. SELECT either all or particular columns from a table in a query. 
-    2. Needs to specify two pieces of info to use SELECT statemet: what you want, and where you want to select it from
+- SELECT statements and FROM statements
+    1. SELECT either all or particular columns from a table in a query. Needs to specify two pieces of info to use SELECT statemet: what you want, and where you want to select it from
     EX input: 
     ```
     SELECT prod_name
@@ -82,11 +81,69 @@
     SELECT prod_name, prod_id, prod_price
     FROM Products;
 
-    SELECT prod_name
+    SELECT  prod_name
             ,prod_id
             ,prod_price
     FROM Products;
     ```
+    EX Retrieving multiple columns using * wildcard
+    ```
+    SELECT * 
+    FROM Products;
+    ```
+    2. LIMIT to see a sample of the data: 
+    EX SQLite limit example
+    ```
+    SELECT columns you wish to see
+    FROM specific table 
+    LIMIT number of records
+    ```
+    EX SQLite 
+    ```
+    SELECT columns you wish to see
+    FROM specific table 
+    LIMIT 5; 
+    ```
+    EX Oracle
+    ```
+    SELECT columns you wish to see
+    FROM specific table 
+    LIMIT <=5; 
+    ```
+    DB2
+    ```
+    SELECT columns you wish to see
+    FROM specific table 
+    FETCH FIRST 5 ROWS ONLY; 
+    ```
+- Creating Tables 
+    1. New Tables in an existing database
+    ```
+    CREATE TABLE Shoes
+    (
+    Id      char (10)   PRIMARY KEY,
+    Brand   char(10)    NOT NULL,
+    Type    char(250)   NOT NULL,
+    Color   char(250)   NOT NULL,
+    Price   decimal(8,2)    NOT NULL,
+    Desc    Varchar(750)    NULL
+    );
+    ```
+    2. Write data to a new table 
+    3. Defining whether columns can accept NULL values or not
+    4. Tables: Use tables to make models and predictions, create dashboards, visualize data with other tools, extract data from other sources
+    5. NULL represents absence of a value in a column. Not the same as an empty string or value. It means that a particular column in a database does not have any data entered for that specific row.
+    6. Addding data to the table 
+    ```
+    INSERT INTO Shoes
+    VALUES  ('14535974'
+            ,'Gucci' 
+            ,'Slippers'
+            ,'Pink'
+            ,'695.00'
+            ,NULL
+            )
+    ``` 
 
-- Tell a DB which table data comes FROM
-- Limit amount of data which is returned in a query
+
+
