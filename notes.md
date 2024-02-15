@@ -152,6 +152,17 @@
             ,NULL
             )
     ``` 
+- Temporary Tables
+    ```
+    CREATE TEMPORARY TABLE Sandals AS 
+    (
+        SELECT * 
+        FROM shoes
+        WHERE shoes_type = 'sandals'
+    )
 
-
+    ```
+    1. Use temp tables to simplify by creating a subset and joining to that subset and derive a new calculation 
+    2. Faster than creating a real table
+    
 
