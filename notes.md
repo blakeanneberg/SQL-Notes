@@ -131,6 +131,7 @@
     ```
     2. Write data to a new table 
     3. Defining whether columns can accept NULL values or not
+        - Datatypes you can assign a column when creating a new table: Real, Integer, Null, Text
     4. Tables: Use tables to make models and predictions, create dashboards, visualize data with other tools, extract data from other sources
     5. NULL represents absence of a value in a column. Not the same as an empty string or value. It means that a particular column in a database does not have any data entered for that specific row.
     6. Addding data to the table 
