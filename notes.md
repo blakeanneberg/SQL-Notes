@@ -166,7 +166,7 @@
     1. Use temp tables to simplify by creating a subset and joining to that subset and derive a new calculation 
     2. Faster than creating a real table
     
-- Comments in SQL
+# Comments in SQL
 1. Single line:
 ```
 SELECT shoe_id
@@ -184,6 +184,11 @@ SELECT shoe_id
 */
 from shoes
 ```
+# Filtering
+
+# Sorting 
+
+# Calculating
 
 
 
