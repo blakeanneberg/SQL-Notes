@@ -185,10 +185,62 @@ SELECT shoe_id
 from shoes
 ```
 # Filtering
+- Narrows data allowed to retrieve
+- REduce number of records you retrieve
+- increase query performacne 
+- Reduce strain on client app
+- Goverence limits
+
+## WHERE 
+- Example
+```
+SELECT column_name, column_name
+FROM table_name
+WHERE column_name, operator value;
+```
+| Operator  | Description |
+|-------------- | ---- |
+| = | Equal |
+|<> | Not Equal or != |
+| > | Greater Than |
+| < | Less than |
+| >= | Greater than or equal |
+| <= | Less than or equal |
+| BETWEEN | Between inclusinve range |
+| IS NULL | is a null value |
+
+
+
+
+
+## BETWEEN 
 
 # Sorting 
 
+
 # Calculating
 
+# New Clauses and Operators in SQL
+## IN
 
+## OR 
 
+## NOT
+
+## LIKE
+
+## ORDER BY
+
+## GROUP BY
+
+## Wildcards
+
+## Math Operators
+
+### AVERAGE
+
+### COUNT
+
+### MAX
+
+### MIN
