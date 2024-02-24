@@ -192,7 +192,7 @@ from shoes
 - Goverence limits
 
 ## WHERE 
-- Example
+- Example 1
 ```
 SELECT column_name, column_name
 FROM table_name
@@ -209,11 +209,51 @@ WHERE column_name, operator value;
 | BETWEEN | Between inclusinve range |
 | IS NULL | is a null value |
 
-
-
-
+- Example 2
+```
+SELECT ProductName
+,UnitPrice
+,SupplierID
+FROM  Products
+WHERE ProductName = 'Tofu';
+```
+- Example 3: Filtering on a single value
+```
+SELECT ProductName
+,UnitPrice
+,SupplierID
+FROM  Products
+WHERE UnitPrice >= 75; 
+```
+- Example 4: Checking for non matches 
+```
+SELECT ProductName
+,UnitPrice
+,SupplierID
+FROM  Products
+WHERE ProductName <> 'Alice Mutton';
+```
+- Example 5: Filtering no Value 
+```
+SELECT ProductName
+,UnitPrice
+,SupplierID
+FROM  Products
+WHERE ProductName IS NULL;
+--Null is no data
+```
 
 ## BETWEEN 
+- Filtering with a range of values
+```
+SELECT ProductName
+,UnitPrice
+,SupplierID
+,UnitsInStock
+FROM Products
+WHERE UnitsInStock BETWEEN 15 and 80;
+
+```
 
 # Sorting 
 
