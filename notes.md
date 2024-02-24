@@ -242,6 +242,8 @@ FROM  Products
 WHERE ProductName IS NULL;
 --Null is no data
 ```
+-NULL tIf you wnat to find something that has a price is zero, then write 0 
+-IS NULL means you have no infomration
 
 ## BETWEEN 
 - Filtering with a range of values
@@ -252,7 +254,6 @@ SELECT ProductName
 ,UnitsInStock
 FROM Products
 WHERE UnitsInStock BETWEEN 15 and 80;
-
 ```
 
 # Sorting 
