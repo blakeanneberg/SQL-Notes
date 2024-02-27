@@ -4,6 +4,7 @@
             /* - What is the problem your tryung to solve? */
             /*                                             */
             /***********************************************/
+
 # Databases 
 - Container (files or set of files) to store organized data
 - A set of related info
@@ -318,9 +319,41 @@ WHERE NOT City='London' AND NOT City='Seattle';
 
 ## LIKE
 
+
+# Sorting Data
+- allows you to see data logially and help keep info you want on top
+
 ## ORDER BY
+- Allows user to sort data by particular columns. 
+- EXAMPLE:
+```
+SELECT something
+FROM database
+ORDER BY characteristics
+```
+- Takes the name of one or more columns
+- Add a comma after each additional column name
+- Can sort by a column not retrieved
+- Must always be the last clause in a select statement
+
+### Sort direction
+- `DESC` decending order 
+- `ASC` ascending order
+- Only applies to the column names it directly prcedes
+
+
+### Sorting by column position
+- Example:
+```ORDER by 2,3
+
+```
+2 means 2nd column
+3 meeans 3rd column, etc. 
+
 
 ## GROUP BY
+
+
 
 ## % Wildcards
 - Good for string values or text data, cant use in numerical data
