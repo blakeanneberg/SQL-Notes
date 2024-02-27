@@ -322,10 +322,16 @@ WHERE NOT City='London' AND NOT City='Seattle';
 
 ## GROUP BY
 
-## Wildcards
+## % Wildcards
 - Good for string values or text data, cant use in numerical data
 - Special character used to match parts of a value
 - Search pattern made from literal text, wildcard character, or a combination
+- Downsides of using Wildcards
+    1. Takes longer to run
+    2. Better to use another operator if possible: `=, <, =>` etc.
+    3. Statements with wildcards take longer to run if used at he end of search patterns
+    4. Placement of wildcard is important
+- % wildcard will not match NULLs (NULL represents no value in a column)
 - Uses LIKE as an operator (though technically a predicate)
 | Wildcard   | Action |
 |--------------- | --------------- |
@@ -334,6 +340,28 @@ WHERE NOT City='London' AND NOT City='Seattle';
 | `%Pizza%`   | Grabs anything before and after the word pizza  |
 | `S%E` | Grabs anything that starts with "S" and ends with "E" Like sadie |
 | `t%@gmail.com` | Grabs gmail addresses that start with "t" hoping to find tom |
+
+### Underscore `(_)` wildcard
+- Matches a single character 
+- IS not supported by DB2
+- EXAMPLE 1
+```
+WHERE size LIKE '_pizza'
+    OUTPUT: 
+    spizza
+    mpizza
+```
+- EXAMPLE 2
+```
+WHERE size LIKE '%pizza'
+OUTPUT: 
+    spizza
+    mpizza
+```
+### Bracket `[]` Wildcard
+- Used to speciify a set of characters in a specific location
+- Does not work with all DBMS 
+- Does not work with SQLite
 
 ## Math Operators
 
