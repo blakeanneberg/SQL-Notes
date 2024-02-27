@@ -1,9 +1,9 @@
-                /***********************************************/
-                /*                                             */
-                /* # Think before you do                       */
-                /* - What is the problem your tryung to solve? */
-                /*                                             */
-                /***********************************************/
+            /***********************************************/
+            /*                                             */
+            /* # Think before you do                       */
+            /* - What is the problem your tryung to solve? */
+            /*                                             */
+            /***********************************************/
 # Databases 
 - Container (files or set of files) to store organized data
 - A set of related info
@@ -263,10 +263,58 @@ WHERE UnitsInStock BETWEEN 15 and 80;
 
 # New Clauses and Operators in SQL
 ## IN
+- Specifies a range of conditions
+- Comma delimited list of values
+- Enclosed in ()
+- IN executes faster than OR
+- Dont have to think about order with IN
+- Can cantain another SELECT
+- Example: 
+```
+SELECT
+ProductID
+,UnitPrice
+,SupplierID
+FROM Products
+WHERE SupplierID IN (9,10,11);
+```
 
 ## OR 
+- DBMS will not evaluate second conditions in a WHERE clause if the first condition is met
+- Use for any rows matching the specific conditions
+- Matters which one you put first.
+- Dont use if you want to check both values, use AND instaed. 
+```
+SELECT 
+ProductName
+,ProductID
+,UnitPrice
+,SupplierID
+,ProductName
+From products
+Where ProductName = 'Tofu' OR 'Konbu';
+```
+## OR with AND
+- Use () after the WHERE to make the AND portion go first and then the WHERE and OR go last.
+- Order of Operations where SQL processes AND before OR
+- Dont rely on default order of operations. Better to be specific and getting in habit of usng the ()
+```
+SELECT 
+ProdutID
+,UnitPrice
+,SupplierID
+FROM Products
+WHERE (SupplierID = 9 OR supplierID = 11)
+AND UnitPrice > 15;
+```
 
 ## NOT
+- Exclude different options
+```
+SELECT *
+FROM Employees
+WHERE NOT City='London' AND NOT City='Seattle';
+```
 
 ## LIKE
 
@@ -275,6 +323,17 @@ WHERE UnitsInStock BETWEEN 15 and 80;
 ## GROUP BY
 
 ## Wildcards
+- Good for string values or text data, cant use in numerical data
+- Special character used to match parts of a value
+- Search pattern made from literal text, wildcard character, or a combination
+- Uses LIKE as an operator (though technically a predicate)
+| Wildcard   | Action |
+|--------------- | --------------- |
+| `%Pizza`   | Grabs anything ending with word pizza |
+| `Pizza%`   | Grabs anything after the word pizza |
+| `%Pizza%`   | Grabs anything before and after the word pizza  |
+| `S%E` | Grabs anything that starts with "S" and ends with "E" Like sadie |
+| `t%@gmail.com` | Grabs gmail addresses that start with "t" hoping to find tom |
 
 ## Math Operators
 
