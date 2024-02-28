@@ -443,6 +443,11 @@ FROM OrderDetails;
 | SUM () | Sums the column values | 
 > 
 ### AVERAGE
+- Rows containing NULL values are ignored by the AVERAGE function
+```
+SELECT AVG(UnitPrice) AS avg_price
+FROM products
+```
 
 ### COUNT
 
