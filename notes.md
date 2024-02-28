@@ -397,7 +397,51 @@ OUTPUT:
 - Does not work with SQLite
 
 ## Math Operators
+- Perform basic math calculations using data
+- Order of operations (PEMDAS)
+- Analysis possibles of using math opeeratiors and SQL together.
 
+| Operator   | Description |
+|--------------- | --------------- |
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+
+- Example 1: Multiplication
+```
+SELECT
+ProductID
+,UnitsOnOrder
+,UnitPrice
+,UnitsOnOrder * UnitPrice AS Total_Order_Cost
+FROM Product
+```
+- Example 2: Combining Math Operations 
+```
+SELECT
+ProductID
+,Quantity
+,UnitPrice
+,Discount
+,(UnitPrice - Discount)*Quantity AS
+Total_Cost
+FROM OrderDetails; 
+```
+## Aggregate Functins
+- Used to summarize data
+- Finding highest and lowest values
+- Find total number of rows
+- Find average value
+- 
+| Function | Description |
+|--------|-----------|
+| AVG () | Aveages of column of values |
+|COUNT () | Counts the number of values |
+| Min () | Finds the minimum value |
+| MAX () | Find the max value |
+| SUM () | Sums the column values | 
+> 
 ### AVERAGE
 
 ### COUNT
@@ -405,3 +449,7 @@ OUTPUT:
 ### MAX
 
 ### MIN
+
+### SUM
+
+### DISTINCT 
