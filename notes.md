@@ -450,11 +450,55 @@ FROM products
 ```
 
 ### COUNT
+-`COUNT(*)` countas all rows in a table containing values or NULL values
+```
+SELECT COUNT (*) AS 
+total_customers
+FROM Customers;
+```
+- `COUNT(column)` counts all the rows in a specific column ignoring NULL values
+```
+SELECT COUNT(CustomerID) AS 
+total_customers
+FROM Customers
+```
 
-### MAX
+### MAX and MIN
+- NULL values are ignored in MIN and MAX functions
+- Example 1
 
-### MIN
+```
+SELECT MAX(UnitPrice) AS max_prod_price
+FROM Products
+```
+- Example 2
+```
+SELECT MAX(UnitPrice) AS max_prod_price
+,MIN(UnitPrice) AS min_prod_price
+FROM Products
+```
 
 ### SUM
+- Example 1 
+```
+SELECT SUM(unitPrice) AS 
+    total_prod_price
+FROM Products
+```
+- Example 2
+```
+SELEECT SUM(UnitPrice*UnitsInStock)
+    AS total_price
+FROM Products
+WHERE SupplierID = 23;
 
-### DISTINCT 
+```
+### DISTINCT
+- If DISTINCT is not specified, ALL is assumed. EX if you want to count customers, you need to specifuiy that you want distinct customers so as not to count the same customers more than once if they are in your data multiple times. 
+- Cannot use DISTINCT on `COUNT(*)`
+- No values to use with MIN and MAX functions 
+- Example 1 
+``` 
+SEELECT COUNT(DISTINCT CustomerID)
+FROM Customers
+```
