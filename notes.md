@@ -1,4 +1,4 @@
-            /***********************************************/
+            ***********************************************/
             /*                                             */
             /* # Think before you do                       */
             /* - What is the problem your tryung to solve? */
@@ -502,3 +502,32 @@ WHERE SupplierID = 23;
 SEELECT COUNT(DISTINCT CustomerID)
 FROM Customers
 ```
+
+
+## Grouping Data with SQL
+
+- Group data in order to summarize subsets of data `GOUP BY; HAVING`
+- Example 1.
+```
+SELECT 
+Region
+,COUNT(CustomerID) AS total_customers
+FROM Customers
+GROUP BY Region;
+```
+- `GROUP BY` clauses can contain multiple columns
+- Every column in your `SELECT` statement must be present in a `GROUP BY` clause, except for aggregated calculations
+- NULLS will be grouped together if your `GROUP BY` column contains NULLs
+- `WHERE` does not work for groups, only filters on rows. Use `HAVING` clause to filter for groups. Example: 
+```
+SELECT
+CustomerID
+,COUNT (*) AS orders 
+FROM Orders 
+GROUP BY CustomerID
+HAVING COUNT (*) >=2;
+```
+- `WHERE` vs `HAVING`
+    1. `WHERE` filters before data is grouped
+    2. `HAVING` filters after data is grouped
+    3. Rows eliminated by the `WHERE` clause will not be a inlcuded in the group
