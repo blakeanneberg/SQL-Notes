@@ -531,3 +531,22 @@ HAVING COUNT (*) >=2;
     1. `WHERE` filters before data is grouped
     2. `HAVING` filters after data is grouped
     3. Rows eliminated by the `WHERE` clause will not be a inlcuded in the group
+- `ORDER BY` with `GROUP BY`
+    1. `ORDER BY` sorts data
+    2.  `GROUP BY` does not sort data
+    EXAMPLE: 
+    ```
+    SELECT SupplierID
+    ,COUNT(*) AS Num_Prod
+    FROM Products
+    WHERE UnitPrice >= 4
+    GROUP BY SupplierID 
+    HAVING COUNT (*) >=2;
+    ```
+## Filtering is Useful
+- Narrow down your results
+- Increasing query and application performance
+- Understand your data
+    1. Finding specific values
+    2. Finding a range of values
+    3. Finding blank values
