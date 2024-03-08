@@ -351,10 +351,6 @@ ORDER BY characteristics
 3 meeans 3rd column, etc. 
 
 
-## GROUP BY
-
-
-
 ## % Wildcards
 - Good for string values or text data, cant use in numerical data
 - Special character used to match parts of a value
@@ -550,3 +546,13 @@ HAVING COUNT (*) >=2;
     1. Finding specific values
     2. Finding a range of values
     3. Finding blank values
+
+## Key SQL Clauses
+| Clause | Description | Required |
+|---------------- | --------------- | --------------- |
+| `SELECT `| Columns or expressions to be returned| yes |
+| `FROM`   | Table from which to retirve data |Only if sleecting data from a table    |
+| `WHERE`   | Row level filtering | no |
+| `GROUP BY`| Group specification | Only if calculating aggregates by group |
+| `HAVING` | group level filter | no |
+| `ORDER BY`| output sort order | no |
