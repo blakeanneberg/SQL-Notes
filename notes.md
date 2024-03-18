@@ -257,12 +257,6 @@ FROM Products
 WHERE UnitsInStock BETWEEN 15 and 80;
 ```
 
-# Sorting 
-
-
-# Calculating
-
-# New Clauses and Operators in SQL
 ## IN
 - Specifies a range of conditions
 - Comma delimited list of values
@@ -556,3 +550,45 @@ HAVING COUNT (*) >=2;
 | `GROUP BY`| Group specification | Only if calculating aggregates by group |
 | `HAVING` | group level filter | no |
 | `ORDER BY`| output sort order | no |
+
+
+# Subqueries and Joines
+
+## Subqueries
+### How they work
+
+- Innermost select portion first
+```
+SELECT
+CustomerID
+,CompanyName
+,Region
+FROM Customers
+WHERE customerID in (SELECT
+customerIDkk
+    FROM Orders 
+    WHERE Freight > 100 );
+```
+
+### Advantages
+- to have 2nd, 3rd or moer queries nested within another query.
+- helpful when it comes to getting info from multiple tables 
+- used for adding addition critereia like a filtering criteria thats not in current table from another table into your query
+
+### Disatvanteges
+
+### Best practies for using subqueries
+
+
+
+## Joins
+
+### Revisit Key Fields
+
+### Linking data together with Joins
+
+### Different types of joins
+
+
+
+
