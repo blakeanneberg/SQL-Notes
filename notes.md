@@ -569,14 +569,43 @@ customerIDkk
     FROM Orders 
     WHERE Freight > 100 );
 ```
+- Subquery in subquery
+```
+SELECT Customer_name, Customer_contact
+FROM Customers
+WHERE cust_in IN 
+    SELECT customer_id
+    FROM Orders 
+    WHERE order_number IN (SELECT order_number
+        FROM OrderItems
+           WHERE prod_name = 'Toothbrush');
+```
+- Subqueries for calculations
+```
+SELECT COUNT (*) AS orders 
+FROM Orders 
+Where customer_id = '1234425';
+
+SELECT customer_name
+    ,Customer_state
+    (SELECT COUNT (*) AS orders 
+    FROM Orders 
+    WHERE Orders.customer_id =
+Customer.customer_id) AS orders 
+FROM customers
+ORDER BY Customer_name
+```
+
 
 ### Advantages
 - to have 2nd, 3rd or moer queries nested within another query.
 - helpful when it comes to getting info from multiple tables 
 - used for adding addition critereia like a filtering criteria thats not in current table from another table into your query
+- No limit to the number of subqueris you can have
 
 ### Disatvanteges
-
+- Perfrmace slows when you nest too deeply
+- Subquery selects can only retireve a single column
 ### Best practies for using subqueries
 
 
