@@ -610,9 +610,13 @@ ORDER BY Customer_name
 
 
 
-## Joins
-
+## Join tables
+- Greater scalability as you create multiple tables to break data down
+- Easier data manipulation
+- Logically models a process within a business, so it can help understand the way a business workes in real world.
+- Split data into multiple tables, helps store data efficiently so not to duplicate records
 ### Revisit Key Fields
+- Join tables via unique key
 
 ### Linking data together with Joins
 
